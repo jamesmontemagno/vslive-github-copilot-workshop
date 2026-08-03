@@ -1,5 +1,5 @@
 ---
-title: "GitHub Copilot app"
+title: "Lab 1 · GitHub Copilot app"
 authors:
   - geektrainer
 lastUpdated: 2026-06-30

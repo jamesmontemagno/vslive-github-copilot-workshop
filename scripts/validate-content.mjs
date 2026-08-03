@@ -6,6 +6,8 @@ import { lessonSections } from './lesson-sections.mjs';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const docsRoot = join(root, 'src', 'content', 'docs');
+const astroConfig = readFileSync(join(root, 'astro.config.mjs'), 'utf8');
+const landingPage = readFileSync(join(root, 'src', 'pages', 'index.astro'), 'utf8');
 const required = [
   'prepare.md',
   'resources.md',
@@ -41,6 +43,39 @@ const findMalformedTaskMarkers = (markdown) => {
 
 for (const path of required) {
   if (!existsSync(join(docsRoot, path))) errors.push(`Missing required page: ${path}`);
+}
+
+if (
+  astroConfig.indexOf("label: '1 · Copilot App'") < 0 ||
+  astroConfig.indexOf("label: '2 · Copilot CLI'") < 0 ||
+  astroConfig.indexOf("label: '1 · Copilot App'") > astroConfig.indexOf("label: '2 · Copilot CLI'")
+) {
+  errors.push('The sidebar must present the Copilot app before Copilot CLI.');
+}
+
+if (
+  landingPage.indexOf("key: 'copilot-app'") < 0 ||
+  landingPage.indexOf("key: 'cli'") < 0 ||
+  landingPage.indexOf("key: 'copilot-app'") > landingPage.indexOf("key: 'cli'")
+) {
+  errors.push('The landing page must present the Copilot app before Copilot CLI.');
+}
+
+for (const script of ['workshop-doctor.ps1', 'workshop-doctor.sh']) {
+  if (!existsSync(join(root, 'scripts', script))) {
+    errors.push(`Missing workshop preflight script: scripts/${script}`);
+  }
+}
+
+for (const path of [
+  'labs/copilot-app/1-install-copilot-app.md',
+  'labs/cli/01-setup.md',
+  'labs/visual-studio/setup.md'
+]) {
+  const markdown = readFileSync(join(docsRoot, path), 'utf8');
+  if (!markdown.includes('GPT-5.3 Codex')) {
+    errors.push(`Missing GPT-5.3 Codex workshop model guidance: ${path}`);
+  }
 }
 
 const walk = (directory) => {

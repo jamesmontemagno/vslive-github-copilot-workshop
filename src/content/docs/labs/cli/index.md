@@ -1,12 +1,12 @@
 ---
-title: "🎮 Mona Mayhem — GitHub Copilot Workshop"
+title: "Lab 2 · Mona Mayhem — GitHub Copilot CLI"
 ---
 
 > **Duration:** 60–90 minutes for the facilitated core; advanced deep dives are available if time permits.
 > **Level:** Intermediate  
 > **Stack:** Astro / Node.js / TypeScript
 
-Build a retro arcade GitHub contribution comparison app — **Mona Mayhem** — while learning the full spectrum of GitHub Copilot workflows. This VS Live edition focuses on the GitHub Copilot CLI experience.
+Build a retro arcade GitHub contribution comparison app — **Mona Mayhem** — while learning the full spectrum of GitHub Copilot workflows. This VS Live edition is the second hands-on lab and focuses on the GitHub Copilot CLI experience.
 
 ---
 
@@ -43,6 +43,7 @@ Before you begin, verify:
 
 - [ ] [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) installed and available as `copilot`
 - [ ] Authenticated in the CLI with `/login`
+- [ ] **GPT-5.3 Codex** selected with `/model` (use Auto only if it is not available to your account)
 - [ ] Comfortable using slash commands like `/help`, `/plan`, and `/review`
 
 

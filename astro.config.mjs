@@ -43,22 +43,7 @@ export default defineConfig({
         { label: 'Workshop home', link: '/' },
         { label: 'Prepare', link: '/prepare/' },
         {
-          label: '1 · Copilot CLI',
-          items: [
-            { label: 'Lab overview', link: '/labs/cli/' },
-            { label: 'Setup & context', link: '/labs/cli/01-setup/' },
-            { label: 'Plan & scaffold', link: '/labs/cli/02-plan-and-scaffold/' },
-            { label: 'Build the game', link: '/labs/cli/03-agent-mode/' },
-            { label: 'Design-first theming', link: '/labs/cli/04-design-vibes/' },
-            { label: 'Polish & parallel work', link: '/labs/cli/05-polish/' },
-            { label: 'Specialized agents', link: '/labs/cli/06-agents/' },
-            { label: 'Skills', link: '/labs/cli/07-skills/' },
-            { label: 'MCP servers', link: '/labs/cli/08-mcp/' },
-            { label: 'Bonus', link: '/labs/cli/09-bonus/' }
-          ]
-        },
-        {
-          label: '2 · Copilot App',
+          label: '1 · Copilot App',
           items: [
             { label: 'Lab overview', link: '/labs/copilot-app/' },
             { label: 'Prerequisites', link: '/labs/copilot-app/0-prerequisites/' },
@@ -70,6 +55,21 @@ export default defineConfig({
             { label: 'Agent Merge', link: '/labs/copilot-app/6-agent-merge/' },
             { label: 'Canvases', link: '/labs/copilot-app/7-canvases/' },
             { label: 'Automations', link: '/labs/copilot-app/8-automations/' }
+          ]
+        },
+        {
+          label: '2 · Copilot CLI',
+          items: [
+            { label: 'Lab overview', link: '/labs/cli/' },
+            { label: 'Setup & context', link: '/labs/cli/01-setup/' },
+            { label: 'Plan & scaffold', link: '/labs/cli/02-plan-and-scaffold/' },
+            { label: 'Build the game', link: '/labs/cli/03-agent-mode/' },
+            { label: 'Design-first theming', link: '/labs/cli/04-design-vibes/' },
+            { label: 'Polish & parallel work', link: '/labs/cli/05-polish/' },
+            { label: 'Specialized agents', link: '/labs/cli/06-agents/' },
+            { label: 'Skills', link: '/labs/cli/07-skills/' },
+            { label: 'MCP servers', link: '/labs/cli/08-mcp/' },
+            { label: 'Bonus', link: '/labs/cli/09-bonus/' }
           ]
         },
         {

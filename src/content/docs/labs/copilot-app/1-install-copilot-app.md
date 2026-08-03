@@ -20,7 +20,7 @@ In this lesson, you will:
 Your team is adopting AI agents to work through a growing backlog. The Copilot app gives you one place to direct that work — picking up issues, running agents, reviewing changes, and merging pull requests. This lesson gets you installed, connected, and comfortable starting a conversation about your project.
 
 > [!NOTE]
-> An eligible Copilot plan is required — Copilot Student or any paid plan (Pro, Pro+, Business, or Enterprise). If you are on Copilot Business or Copilot Enterprise, your administrator must enable the **Copilot CLI** policy before the app will work.
+> An eligible Copilot plan is required — Copilot Student or any paid plan (Pro, Pro+, Business, or Enterprise). If you use Copilot Business or Copilot Enterprise, your administrator must enable the separate **GitHub Copilot app** policy before the app will work.
 
 ## Install and configure the GitHub Copilot app
 
@@ -67,13 +67,18 @@ Because the app integrates with GitHub natively, the work waiting in your reposi
 A great way to get comfortable with the app is to use it to learn about the *app itself* — and a **quick chat** is exactly the right tool for that. Quick chats let you ask a question or brainstorm without creating a branch or worktree, so they're perfect for a fast, throwaway question — no session required.
 
 1. In the sidebar, select **+** next to **Chats** to open a new chat.
-2. Ask the app how its own sessions work:
+2. In the model selector below the prompt, choose **GPT-5.3 Codex** instead of **Auto**. Keep this model selected for the App lab's agent sessions.
+
+   > [!TIP]
+   > If **GPT-5.3 Codex** is not listed, your plan or organization has not enabled it. Use **Auto** for this workshop and let a facilitator know; do not attempt to work around your organization's model policy.
+
+3. Ask the app how its own sessions work:
 
    ```plaintext
    How does the GitHub Copilot app use worktrees?
    ```
 
-3. Read the response in the conversation view. You'll see that each session runs in its own isolated git worktree — the detail that lets you run several agents in parallel without their changes colliding. You can continue the conversation or start a new chat at any time.
+4. Read the response in the conversation view. You'll see that each session runs in its own isolated git worktree — the detail that lets you run several agents in parallel without their changes colliding. You can continue the conversation or start a new chat at any time.
 
 ## Summary and next steps
 

@@ -3,18 +3,18 @@
 [Open the live workshop site](https://jamesmontemagno.github.io/vslive-github-copilot-workshop/)
 
 This is the unified hands-on workshop for VS Live Redmond with Kayla Cinnamon and James Montemagno.
-It brings four GitHub Copilot experiences into one guided site, so attendees can move from using
-Copilot in the terminal to building an agent-powered application.
+It brings four GitHub Copilot experiences into one guided site, so attendees can begin with the
+Copilot app and progress through terminal, IDE, and SDK workflows.
 
 ## Workshop path
 
 The workshop is designed as a progressive, practical day of learning:
 
 1. **Kickoff** — A short look at the state of GitHub Copilot and what is now possible.
-2. **GitHub Copilot CLI** — Use Copilot from the terminal to plan, scaffold, refine, and automate
-   software work.
-3. **GitHub Copilot app** — Practice the software development lifecycle with the Copilot app,
+2. **GitHub Copilot app** — Practice the software development lifecycle with the Copilot app,
    including planning, agent work, code review, and extensibility.
+3. **GitHub Copilot CLI** — Use Copilot from the terminal to plan, scaffold, refine, and automate
+   software work.
 4. **Visual Studio 2026** — Explore GitHub Copilot features in Visual Studio, from completions and
    chat through MCP, planning, and cloud delegation.
 5. **GitHub Copilot SDK** — Build a .NET accessibility-review application that combines a Copilot
