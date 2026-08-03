@@ -45,6 +45,12 @@ Before we begin, let's install the .github + MCP extension for Visual Studio. Th
 
 Part 9 creates GitHub issues and Part 12 delegates work to a cloud agent. Both need a repository where you have write access. Fork `workshop-tinyshop` before those parts. If enterprise policy prevents a fork, you can complete every local exercise but must skip those repository-backed actions.
 
+## Select the workshop model
+
+1. [ ] Open GitHub Copilot Chat.
+2. [ ] In the model picker at the bottom of the Chat pane, select **GPT-5.3 Codex** instead of **Auto**.
+3. [ ] If **GPT-5.3 Codex** is not listed, select **Auto** and let a facilitator know. Do not attempt to bypass your organization's model policy.
+
 ## Turn on Copilot Settings
 
 1. [ ] Ensure Code Completions and Next Edit Suggestions are enabled:

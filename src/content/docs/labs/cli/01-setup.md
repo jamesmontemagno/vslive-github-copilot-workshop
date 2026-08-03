@@ -6,22 +6,7 @@ In this part you'll set up your development environment **and** teach Copilot ab
 
 ## Section 1: Initial Setup
 
-### Step 1: Open the CLI Lab
-
-Clone the Mona Mayhem starter and open it in Visual Studio Code:
-
-```bash
-git clone https://github.com/jamesmontemagno/workshop-mona-mayhem.git
-cd workshop-mona-mayhem
-code .
-```
-
-Keep your work in this folder. A direct clone is sufficient for the local lab. Fork this repository only if you want to push your work or use the optional cloud delegation exercise.
-
-
-
-
-### Step 2: Install GitHub Copilot CLI
+### Step 1: Install GitHub Copilot CLI
 
 Use the installation path that matches your machine:
 
@@ -34,18 +19,87 @@ Use the installation path that matches your machine:
 - **Homebrew (macOS/Linux)**
 
   ```bash
-  brew install copilot-cli
+  brew install --cask copilot-cli
   ```
 
 - **WinGet (Windows)**
 
-  ```bash
+  ```powershell
   winget install GitHub.Copilot
   ```
 
-### Step 3: Start the App and Authenticate the CLI
+### Step 2: Authenticate and select the workshop model
 
-1. In the terminal already open at `workshop-mona-mayhem`, install dependencies and start the app:
+Before you open the starter project, sign in to the CLI and choose the model the workshop uses:
+
+1. From any terminal, run:
+
+   ```bash
+   copilot login
+   ```
+
+2. Complete the browser device flow. If your organization uses SAML SSO, select **Authorize** for the organization when GitHub prompts you.
+3. Start an interactive session:
+
+   ```bash
+   copilot
+   ```
+
+4. In the session, enter:
+
+   ```text
+   /model
+   ```
+
+5. Select **GPT-5.3 Codex**, then exit the session with `/exit`.
+
+> [!TIP]
+> If **GPT-5.3 Codex** is not listed, your plan or organization has not enabled it. Select **Auto** and let a facilitator know; do not attempt to work around your organization's model policy.
+
+### Step 3: Open and verify the CLI lab
+
+Clone the dedicated Mona Mayhem starter, then prove that your terminal is in that repository before starting Copilot:
+
+```bash
+git clone https://github.com/jamesmontemagno/workshop-mona-mayhem.git
+cd workshop-mona-mayhem
+code .
+```
+
+Run the verification commands for your platform:
+
+<div data-tabs>
+  <div role="tablist" aria-label="Verify the CLI lab folder">
+   <button role="tab" aria-selected="true" data-tab="powershell">PowerShell</button>
+   <button role="tab" aria-selected="false" data-tab="shell">macOS or Linux</button>
+  </div>
+
+  <div role="tabpanel" data-panel="powershell">
+
+```powershell
+Get-Location
+git rev-parse --show-toplevel
+git remote get-url origin
+```
+
+  </div>
+
+  <div role="tabpanel" data-panel="shell" hidden>
+
+```bash
+pwd
+git rev-parse --show-toplevel
+git remote get-url origin
+```
+
+  </div>
+</div>
+
+All three commands should identify `workshop-mona-mayhem` and the `https://github.com/jamesmontemagno/workshop-mona-mayhem.git` origin. If they do not, stop and `cd` into the cloned `workshop-mona-mayhem` folder before continuing.
+
+### Step 4: Start the app and confirm CLI context
+
+1. In the terminal at `workshop-mona-mayhem`, install dependencies and start the app:
 
    ```bash
    npm install
@@ -58,15 +112,15 @@ Use the installation path that matches your machine:
    copilot
    ```
 
-3. In the interactive session, enter:
+3. Confirm that the model is still **GPT-5.3 Codex**, then ask:
 
+   ```text
+   Before we make changes, identify the current working directory and repository root. Confirm the repository name, the remote origin, and the main technologies in this project.
    ```
-   /login
-   ```
 
-4. Follow the device flow prompts, then confirm that you trust the repository when the CLI asks for approval.
+4. Confirm that Copilot identifies the Mona Mayhem repository. If it identifies a parent folder or another project, exit with `/exit`, return to Step 3, and restart `copilot` from the correct folder.
 
-> ✅ **You now have the app preview in one terminal and Copilot CLI ready in another.**
+> **Result:** You have the app preview in one terminal and Copilot CLI, using the intended model and the intended repository, in another.
 
 
 ## Section 2: Context Engineering
@@ -96,15 +150,14 @@ Let's use `/init` to generate a workspace instructions file for Copilot:
 Practice the CLI controls that make later steps smoother:
 
 1. Run `/help` to scan the available slash commands.
-2. Use `/model` to inspect the models available to you.
-3. If Copilot has learned too many approvals during experimentation, reset them with:
+2. If Copilot has learned too many approvals during experimentation, reset them with:
 
    ```
    /reset-allowed-tools
    ```
 
-4. If your repository lives inside a larger parent directory, use `/add-dir PATH` to explicitly widen the allowed workspace.
-5. Turn on cross-session memory with `/memory` so Copilot remembers useful facts about how you work, and use `/instructions` to see which instruction files are loaded.
+3. If your repository lives inside a larger parent directory, use `/add-dir PATH` to explicitly widen the allowed workspace.
+4. Turn on cross-session memory with `/memory` so Copilot remembers useful facts about how you work, and use `/instructions` to see which instruction files are loaded.
 
 > 💡 The CLI docs recommend concise custom instructions plus explicit tool permissions so Copilot stays fast and predictable.
 

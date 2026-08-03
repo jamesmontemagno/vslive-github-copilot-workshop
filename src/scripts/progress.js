@@ -3,17 +3,6 @@
   const taskStorageKey = 'vslive-workshop-task-progress-v1';
   const base = document.querySelector('meta[name="workshop-base"]')?.content || '/';
   const labs = {
-    cli: [
-      '01-setup',
-      '02-plan-and-scaffold',
-      '03-agent-mode',
-      '04-design-vibes',
-      '05-polish',
-      '06-agents',
-      '07-skills',
-      '08-mcp',
-      '09-bonus'
-    ],
     'copilot-app': [
       '0-prerequisites',
       '1-install-copilot-app',
@@ -24,6 +13,17 @@
       '6-agent-merge',
       '7-canvases',
       '8-review'
+    ],
+    cli: [
+      '01-setup',
+      '02-plan-and-scaffold',
+      '03-agent-mode',
+      '04-design-vibes',
+      '05-polish',
+      '06-agents',
+      '07-skills',
+      '08-mcp',
+      '09-bonus'
     ],
     'visual-studio': [
       'setup',
@@ -106,7 +106,7 @@
   const updateLanding = () => {
     let completed = 0;
     let total = 0;
-    let resumeHref = `${base}labs/cli/01-setup/`;
+    let resumeHref = `${base}labs/copilot-app/0-prerequisites/`;
     let foundResume = false;
 
     Object.entries(labs).forEach(([lab, steps]) => {

@@ -36,7 +36,8 @@ Let's start a new session to begin exploring the project and implementing our fe
 
    ![The GitHub Copilot app prompt box with the repository selector set to tailspin-toys and the model selector shown beneath the prompt](../_images/app-2-start-session.png)
 
-4. Use the following prompt to request the change:
+4. Confirm that the model selector below the prompt is set to **GPT-5.3 Codex**, not **Auto**. If it is unavailable for your account, use **Auto** and let a facilitator know.
+5. Use the following prompt to request the change:
 
    ```plaintext
    On the game cards, show each game's star rating. The Game type already includes a starRating field — it's a number out of 5, or null when a game hasn't been rated yet. Display it on each card in @src/components/GameCard.astro, and when starRating is null show "No rating yet" instead. Keep the change small and don't restructure the card layout.
@@ -45,7 +46,7 @@ Let's start a new session to begin exploring the project and implementing our fe
 > [!NOTE]
 > Notice how the prompt contained the name of the file for Copilot to update. While it's not required at all to specify which files Copilot should include in its work, pointing it in the right direction both helps Copilot quickly generate code and reduce token usage.
 
-5. Select <kbd>Enter</kbd> to send the prompt to Copilot.
+6. Select <kbd>Enter</kbd> to send the prompt to Copilot.
 
 Copilot app begins work by first creating a new worktree, an isolated copy of the project. It then explores the project, locating the necessary files to update to add the new feature. It will then create the necessary code. You've now added a new feature with Copilot app!
 

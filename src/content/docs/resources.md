@@ -32,7 +32,11 @@ Lesson content and starter projects are pinned to the exact upstream commits lis
 ## Product documentation
 
 - [GitHub Copilot documentation](https://docs.github.com/copilot)
-- [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-cli)
+- [Install GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli)
+- [Authenticate GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/authenticate-copilot-cli)
+- [Copilot organization policies](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-organization/manage-policies)
+- [Copilot enterprise policies](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-enterprise-policies)
+- [GitHub Copilot app](https://docs.github.com/en/copilot/how-tos/github-copilot-app/getting-started)
 - [GitHub Copilot SDK](https://github.com/github/copilot-sdk)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Visual Studio](https://visualstudio.microsoft.com/vs/)

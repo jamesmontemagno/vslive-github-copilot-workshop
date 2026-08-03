@@ -9,6 +9,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "validate:content": "node scripts/validate-content.mjs",
+    "doctor:windows": "powershell -ExecutionPolicy Bypass -File scripts/workshop-doctor.ps1",
+    "doctor:unix": "bash scripts/workshop-doctor.sh",
     "import:workshops": "node scripts/import-workshops.mjs"
   },
   "dependencies": {

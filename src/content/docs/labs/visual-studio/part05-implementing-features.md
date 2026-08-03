@@ -20,9 +20,9 @@ Let's add the ability to see a list of images into the app:
 
    ![Switch to agent mode](./images/1-agent.png)
 
-1. [ ] At the bottom of the GitHub Copilot Chat pane, select the model (default is "Auto") from the dropdown list, and select **GPT-5.3 Codex** from the list of available models.
+1. [ ] At the bottom of the GitHub Copilot Chat pane, confirm the model is **GPT-5.3 Codex** rather than **Auto**. If your organization does not make it available, use **Auto** and notify a facilitator.
 
-    ![Select Opus in Copilot](./images/5-select-sonnet.png)
+    ![Select the model in Copilot](./images/5-select-sonnet.png)
 
 1. [ ] Type: `Implement a simple product listing page in Products.razor that fetches products from #ProductService and displays them in a simple list with product name, description, price, and image.`
 
