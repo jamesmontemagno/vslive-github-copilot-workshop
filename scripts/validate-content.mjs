@@ -18,15 +18,8 @@ const errors = [];
 
 const favicon = readFileSync(join(root, 'public', 'favicon.svg'), 'utf8');
 const headerMark = readFileSync(join(root, 'src', 'assets', 'mark.svg'), 'utf8');
-const targetAppIndex = join(root, 'public', 'target-app', 'index.html');
-const targetAppStyles = join(root, 'public', 'target-app', 'app.css');
 if (favicon !== headerMark) {
   errors.push('The public favicon and Starlight header mark must stay identical.');
-}
-if (!existsSync(targetAppIndex) || !existsSync(targetAppStyles)) {
-  errors.push('The deployed SDK target app is missing.');
-} else if (!readFileSync(targetAppIndex, 'utf8').includes('Accessibility Report Target')) {
-  errors.push('The deployed SDK target app is incomplete.');
 }
 
 const findMalformedTaskMarkers = (markdown) => {
@@ -170,30 +163,8 @@ for (const name of [
     errors.push(`SDK lesson must retain the selected model: ${name}`);
   }
 }
-for (const projectPath of [
-  ...readdirSync(join(root, 'labs', '04-copilot-sdk', 'checkpoints'), {
-    withFileTypes: true
-  })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => join(root, 'labs', '04-copilot-sdk', 'checkpoints', entry.name)),
-  ...readdirSync(join(root, 'labs', '04-copilot-sdk', 'samples'), {
-    withFileTypes: true
-  })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => join(root, 'labs', '04-copilot-sdk', 'samples', entry.name))
-]) {
-  const programPath = join(projectPath, 'Program.cs');
-  const modelSelectorPath = join(projectPath, 'Helpers', 'ModelSelector.cs');
-  if (
-    !existsSync(modelSelectorPath) ||
-    !readFileSync(programPath, 'utf8').includes('Model = selectedModel')
-  ) {
-    errors.push(`SDK runnable project must retain model selection: ${projectPath}`);
-  }
-}
-
 const hostedTargetAppUrl =
-  'https://jamesmontemagno.github.io/vslive-github-copilot-workshop/target-app/';
+  'https://jamesmontemagno.github.io/workshop-accessibility-agent/target-app/';
 const sdkIndex = readFileSync(join(docsRoot, 'labs', 'copilot-sdk', 'index.md'), 'utf8');
 if (!sdkIndex.includes(hostedTargetAppUrl)) {
   errors.push('The SDK overview must link to the hosted target app.');

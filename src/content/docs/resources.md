@@ -13,9 +13,15 @@ description: "Official event links, source workshops, and imported-content prove
 - Kayla Cinnamon
 - James Montemagno
 
+## Workshop projects
+
+- [Mona Mayhem · Copilot CLI](https://github.com/jamesmontemagno/workshop-mona-mayhem)
+- [TinyShop · Visual Studio](https://github.com/jamesmontemagno/workshop-tinyshop)
+- [Accessibility Agent · Copilot SDK](https://github.com/jamesmontemagno/workshop-accessibility-agent)
+
 ## Source workshops
 
-- [Mona Mayhem · Copilot CLI](https://github.com/cinnamon-msft/kayla-chaos)
+- [Mona Mayhem source](https://github.com/cinnamon-msft/kayla-chaos)
 - [Copilot Workshops · Copilot app track](https://github.com/github-samples/copilot-workshops)
 - [Tailspin Toys starter](https://github.com/github-samples/tailspin-toys)
 - [Visual Studio GitHub Copilot Lab](https://github.com/dotnet-presentations/visual-studio-github-copilot-lab)

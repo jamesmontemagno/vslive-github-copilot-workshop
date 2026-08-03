@@ -215,7 +215,7 @@ messages and tool context for one conversation.
 <summary>Complete Step 1 checkpoint</summary>
 
 To compare your work with a complete project, open the
-[`checkpoints/01-first-session`](https://github.com/jamesmontemagno/copilot-sdk-workshop/tree/main/checkpoints/01-first-session)
+[`checkpoints/01-first-session`](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/checkpoints/01-first-session)
 checkpoint.
 
 ```csharp

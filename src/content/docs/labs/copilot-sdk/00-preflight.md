@@ -34,14 +34,15 @@ GitHub Copilot CLI ...
 
 ## 1. Open the SDK lab folder
 
-From the workshop repository you cloned during [Step 0](../../../prepare/#step-0-fork-or-clone-the-workshop), open the included SDK lab:
+Clone the dedicated SDK workshop repository and open it in Visual Studio Code:
 
 ```bash
-cd labs/04-copilot-sdk
+git clone https://github.com/jamesmontemagno/workshop-accessibility-agent.git
+cd workshop-accessibility-agent
 code .
 ```
 
-If `code` is not on your path, use your editor's **Open Folder** command and select `labs/04-copilot-sdk` instead.
+If `code` is not on your path, use your editor's **Open Folder** command and select `workshop-accessibility-agent` instead.
 
 ## 2. Authenticate Copilot
 
@@ -108,7 +109,7 @@ Build succeeded.
 Open the controlled target page once to make sure you can reach it:
 
 ```text
-https://jamesmontemagno.github.io/vslive-github-copilot-workshop/target-app/
+https://jamesmontemagno.github.io/workshop-accessibility-agent/target-app/
 ```
 
 <details>

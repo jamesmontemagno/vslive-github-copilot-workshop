@@ -9,11 +9,17 @@ Build a console application that accepts a webpage URL, opens it with Playwright
 
 ## Explore the target app
 
-Open the [accessibility target app](https://jamesmontemagno.github.io/vslive-github-copilot-workshop/target-app/) to see the intentionally introduced issues the workshop will investigate. You will use this page as browser evidence when building the report.
+Open the [accessibility target app](https://jamesmontemagno.github.io/workshop-accessibility-agent/target-app/) to see the intentionally introduced issues the workshop will investigate. You will use this page as browser evidence when building the report.
 
 ## Starter
 
-Begin in `labs/04-copilot-sdk/start/HelloCopilotSDK`, using [Visual Studio Code](https://code.visualstudio.com/) and a terminal. Compiling checkpoints and completed samples are included beside it for recovery and comparison.
+```bash
+git clone https://github.com/jamesmontemagno/workshop-accessibility-agent.git
+cd workshop-accessibility-agent
+code .
+```
+
+Begin in `start/HelloCopilotSDK`, using [Visual Studio Code](https://code.visualstudio.com/) and a terminal. Compiling checkpoints and completed samples are included beside it for recovery and comparison. Use `git switch completed` to inspect the finished reporter.
 
 ## Core path
 
@@ -30,4 +36,4 @@ Begin in `labs/04-copilot-sdk/start/HelloCopilotSDK`, using [Visual Studio Code]
 
 If time remains, continue to [model selection](./08-model-selection/).
 
-Source: [jamesmontemagno/copilot-sdk-workshop](https://github.com/jamesmontemagno/copilot-sdk-workshop)
+Project: [jamesmontemagno/workshop-accessibility-agent](https://github.com/jamesmontemagno/workshop-accessibility-agent)

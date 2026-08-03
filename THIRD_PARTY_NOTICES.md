@@ -4,7 +4,7 @@ This repository combines selected educational content and starter materials from
 
 ## Mona Mayhem
 
-Copyright its contributors. Source: <https://github.com/cinnamon-msft/kayla-chaos>. Distributed under the MIT License. The upstream `LICENSE` is preserved in `labs/01-copilot-cli/`.
+Copyright its contributors. Source: <https://github.com/cinnamon-msft/kayla-chaos>. Distributed under the MIT License. The upstream `LICENSE` is preserved in the standalone <https://github.com/jamesmontemagno/workshop-mona-mayhem> repository.
 
 ## Copilot Workshops
 
@@ -16,7 +16,7 @@ The Copilot app lab uses the separate Tailspin Toys template at <https://github.
 
 ## Visual Studio GitHub Copilot Lab
 
-Copyright its contributors. Source: <https://github.com/dotnet-presentations/visual-studio-github-copilot-lab>. Distributed under the MIT License. The upstream `LICENSE` is preserved in `labs/03-visual-studio/`.
+Copyright its contributors. Source: <https://github.com/dotnet-presentations/visual-studio-github-copilot-lab>. Distributed under the MIT License. The upstream `LICENSE` is preserved in the standalone <https://github.com/jamesmontemagno/workshop-tinyshop> repository.
 
 ## Copilot SDK Workshop
 

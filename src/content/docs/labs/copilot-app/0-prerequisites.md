@@ -68,6 +68,9 @@ You'll work against your own copy of the Tailspin Toys project. Create it now fr
 > [!NOTE]
 > When you create your repository from the template, a backlog of GitHub issues is created for you automatically. You'll work from these issues throughout the workshop — there's nothing to file yourself.
 
+> [!IMPORTANT]
+> Creating a repository from the template is required for the issue, pull request, cloud, and Agent Merge lessons. If enterprise policy prevents that, clone the template with `git clone https://github.com/github-samples/tailspin-toys.git` and complete the local editing lessons; skip the repository-backed exercises.
+
 ## Summary and next steps
 
 You're set up! You installed Node.js so the project can build and test on your machine, and you created your own copy of the Tailspin Toys repository from the template.

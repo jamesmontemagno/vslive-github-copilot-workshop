@@ -64,6 +64,9 @@ Now that you have the Microsoft Learn and GitHub MCP servers installed, let's us
 
 The GitHub MCP server allows Copilot to interact with your GitHub repository. Let's use it to create issues for improvements we want to make to the application.
 
+> [!NOTE]
+> This exercise requires write access to the repository. Fork `workshop-tinyshop` before continuing. If you are using a direct clone because your account cannot fork, skip issue creation and ask Copilot to draft the issues instead.
+
 1. [ ] Ensure that the GitHub MCP server is selected as an active tool in Copilot Chat and that the tools are enabled for .
 1. [ ] In the same chat session, type: `Based on the asset optimization recommendations, create 3 GitHub issues for improving the TinyShop application's performance.`
 
