@@ -11,8 +11,8 @@ and report limitations.
 
 ## See the whole agent system
 
-The finished application is an agent host. Its session coordinates a model, an application-owned
-function, and a browser running in another process:
+The finished application is an agent host. Its session coordinates a model, application-owned
+functions, and a browser running in another process:
 
 ```text
 Console application
@@ -23,6 +23,9 @@ Console application
             |
             +-- accessibility_rule_lookup
             |     same process, application-owned data
+            |
+            +-- write_accessibility_html_report
+            |     same process, fixed report output only
             |
             `-- Playwright MCP
                   separate process, scoped permission handler
@@ -37,12 +40,12 @@ reproducing the workshop code. A database lookup, deployment service, or issue t
 different tools, but the same ownership and trust questions apply.
 
 The complete flow is
-`URL -> Playwright inspection -> C# WCAG lookup -> structured accessibility report`.
+`URL -> Playwright inspection -> C# WCAG lookup -> structured accessibility report -> constrained local HTML writer`.
 
 ## Take a victory lap
 
-There is no code to change. Keep the Step 6 checkpoint in place so this run tests the application
-you built.
+There is no additional code to change. Keep the completed Step 6 application in place so this run
+tests the report generator and its constrained HTML report writer.
 
 ## Run it
 
@@ -56,13 +59,14 @@ Use the workshop target:
 https://jamesmontemagno.github.io/workshop-accessibility-agent/target-app/
 ```
 
-Watch for all five stages:
+Watch for all six stages:
 
 1. The client connects and creates one session.
 2. Playwright navigates to the exact target and creates an accessibility snapshot.
 3. The narrow local reader returns that current-run snapshot.
 4. The local catalog is called for browser-supported findings.
 5. The response follows the report contract and states its limits.
+6. The fixed-output writer creates `reports/accessibility-report.html`, which you can open and filter locally.
 
 The controlled target intentionally includes browser-observable issues: a missing text alternative,
 no `main` landmark, an illogical heading sequence, and a textbox without an accessible name.
@@ -83,7 +87,8 @@ do not accept a finding that is absent from both the snapshot and source.
 </details>
 
 > **You have completed the core workshop when:** the report is grounded, the tool names are visible,
-> and you can answer the architecture questions below without reading the code.
+> the HTML artifact stays in its fixed report location, and you can answer the architecture
+> questions below without reading the code.
 
 ## Check your understanding
 
@@ -91,7 +96,8 @@ do not accept a finding that is absent from both the snapshot and source.
 2. Why is the WCAG catalog local?
 3. Why is Playwright external?
 4. Where are permissions enforced?
-5. What changes when another MCP server is added?
+5. Why does the report writer use a fixed output path instead of accepting a path from the model?
+6. What changes when another MCP server is added?
 
 <details>
 <summary>Compare your explanation</summary>
@@ -102,7 +108,9 @@ do not accept a finding that is absent from both the snapshot and source.
 4. The MCP tool allowlist exposes only navigation, and `WorkshopPermissionHandler` approves only
    the exact target. The trusted local reader accepts no path and reads only a new generated
    snapshot; the catalog is also read-only. Those application-owned tools skip permission.
-5. Add the server configuration, expose only needed tools, define its trust policy, and keep
+5. A fixed output path limits file creation to the report artifact; a model-controlled path would
+   unnecessarily broaden the application-owned tool's authority.
+6. Add the server configuration, expose only needed tools, define its trust policy, and keep
    observing its calls through the same session event stream.
 
 </details>
@@ -114,7 +122,7 @@ over model choice. Otherwise, the core workshop is complete.
 
 Complete references:
 
-- [Step 6 checkpoint](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/checkpoints/06-structured-report)
-- [Finished accessibility reporter](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/completed/start/HelloCopilotSDK)
+- [Step 6 Markdown checkpoint](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/checkpoints/06-structured-report)
+- [Finished Markdown accessibility reporter](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/completed/start/HelloCopilotSDK)
 - [GitHub Copilot SDK for .NET](https://github.com/github/copilot-sdk/tree/main/dotnet)
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp)
