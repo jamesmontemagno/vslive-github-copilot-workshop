@@ -16,6 +16,18 @@ Follow the CLI instructions throughout this edition. Parts 1–5 form the facili
 
 ---
 
+## Starter
+
+```bash
+git clone https://github.com/jamesmontemagno/workshop-mona-mayhem.git
+cd workshop-mona-mayhem
+code .
+```
+
+The starter is on `main`; use `git switch completed` to inspect the finished battle arena.
+
+---
+
 ## 📋 Quick Checklist
 
 Before you begin, verify:

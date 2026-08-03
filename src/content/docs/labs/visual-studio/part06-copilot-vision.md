@@ -7,7 +7,7 @@ In this section, you'll use Copilot Vision. You can share screenshots of errors 
 ## Attach a design reference
 
 1. [ ] Open a new Copilot Chat thread in **Agent** mode.
-1. [ ] Click the **+** button in the chat, select **upload image**, and select `labs/03-visual-studio/eshop.png` from your cloned workshop repository.
+1. [ ] Click the **+** button in the chat, select **upload image**, and select `eshop.png` from the root of your cloned TinyShop repository.
 
     ![Attach image icon](./images/6-add-image.png)
 

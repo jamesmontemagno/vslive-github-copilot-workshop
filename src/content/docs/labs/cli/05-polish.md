@@ -30,6 +30,9 @@ If you want to try an asynchronous cloud workflow, delegate a design variation:
 
 That delegated task should create a pull request you can review separately while you keep working locally.
 
+> [!NOTE]
+> `/delegate` needs a repository where you can create issues and pull requests. Fork `workshop-mona-mayhem` before this optional task. If you cannot fork it, skip this task and continue with the local review exercises.
+
 ## Task 3: Run an Agentic Review
 
 Before you wrap up, ask Copilot CLI for a review pass:

@@ -81,7 +81,7 @@ dotnet run --project workshop-app
 When the app asks for a URL, paste:
 
 ```text
-https://jamesmontemagno.github.io/vslive-github-copilot-workshop/target-app/
+https://jamesmontemagno.github.io/workshop-accessibility-agent/target-app/
 ```
 
 The report should follow this shape:
@@ -127,9 +127,9 @@ writing the remediation are interpretations based on that evidence and the catal
 <summary>Complete Step 6 checkpoint</summary>
 
 For comparison, use the
-[`checkpoints/06-structured-report`](https://github.com/jamesmontemagno/copilot-sdk-workshop/tree/main/checkpoints/06-structured-report)
+[`checkpoints/06-structured-report`](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/checkpoints/06-structured-report)
 project. The completed application is also in
-[`samples/accessibility-report`](https://github.com/jamesmontemagno/copilot-sdk-workshop/tree/main/samples/accessibility-report).
+[`samples/accessibility-report`](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/samples/accessibility-report).
 
 ```csharp
 using GitHub.Copilot;

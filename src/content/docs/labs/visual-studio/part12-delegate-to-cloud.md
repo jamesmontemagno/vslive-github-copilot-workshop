@@ -33,6 +33,9 @@ Before delegating to the cloud, it's important to write a clear, detailed prompt
 
 ## Delegating to the Cloud
 
+> [!NOTE]
+> Cloud delegation creates a GitHub issue and pull request, so it requires a fork of `workshop-tinyshop` (or another repository where you have write access). If your account cannot fork, this feature is unavailable; run the dark-theme prompt in local Agent mode instead.
+
 1. [ ] Open Copilot Chat and create a new chat
 1. Switch to **Cloud** agent.
 

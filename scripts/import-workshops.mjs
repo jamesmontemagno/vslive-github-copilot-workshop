@@ -24,9 +24,8 @@ const cachedRoot =
     : null;
 const temporaryRoot = cachedRoot ? null : mkdtempSync(join(tmpdir(), 'vslive-workshops-'));
 const contentRoot = join(root, 'src', 'content', 'docs', 'labs');
-const labsRoot = join(root, 'labs');
 const targetAppUrl =
-  'https://jamesmontemagno.github.io/vslive-github-copilot-workshop/target-app/';
+  'https://jamesmontemagno.github.io/workshop-accessibility-agent/target-app/';
 const modelSelectorSource = (rootNamespace) => `using GitHub.Copilot;
 
 namespace ${rootNamespace}.Helpers;
@@ -65,19 +64,13 @@ const cleanTargets = [
   join(contentRoot, 'copilot-app'),
   join(contentRoot, 'visual-studio'),
   join(contentRoot, 'copilot-sdk'),
-  join(contentRoot, '_images'),
-  join(root, 'public', 'target-app'),
-  join(labsRoot, '01-copilot-cli'),
-  join(labsRoot, '02-copilot-app'),
-  join(labsRoot, '03-visual-studio'),
-  join(labsRoot, '04-copilot-sdk')
+  join(contentRoot, '_images')
 ];
 
 for (const target of cleanTargets) {
   rmSync(target, { recursive: true, force: true });
 }
 mkdirSync(contentRoot, { recursive: true });
-mkdirSync(labsRoot, { recursive: true });
 
 const sources = Object.fromEntries(
   manifest.sources.map((source) => {
@@ -319,17 +312,19 @@ importMarkdownDirectory(
       ],
       [
         /1\. Open \[github\.com\/copilot-dev-days\/mona-mayhem\][\s\S]*?3\. Name it `my-mona-mayhem` and set visibility to \*\*Public\*\* \(if you created from template\)/,
-        `From the workshop repository root, open a terminal in the included starter:
+        `Clone the dedicated Mona Mayhem starter and open it in Visual Studio Code:
 
 \`\`\`bash
-cd labs/01-copilot-cli
+git clone https://github.com/jamesmontemagno/workshop-mona-mayhem.git
+cd workshop-mona-mayhem
+code .
 \`\`\`
 
-Keep your work in this folder. If you forked the workshop repository during [Step 0](../../../prepare/#step-0-fork-or-clone-the-workshop), your changes can be committed and pushed back to that fork.`
+Keep your work in this folder. A direct clone is sufficient for the local lab. Fork this repository only if you want to push your work or use the optional cloud delegation exercise.`
       ],
       [
         /1\. Clone your repo locally and open a terminal in the project root\./,
-        '1. In the terminal already open at `labs/01-copilot-cli`, install dependencies and start the app:'
+        '1. In the terminal already open at `workshop-mona-mayhem`, install dependencies and start the app:'
       ],
       [
         /2\. Install dependencies and start the app:\n/,
@@ -359,7 +354,7 @@ importMarkdownDirectory(
     indexFile: 'README.md',
     introFiles: ['README.md', '0-prerequisites.md'],
     intro:
-      '> [!NOTE]\n> This lab intentionally uses the separate [Tailspin Toys template repository](https://github.com/github-samples/tailspin-toys), not a folder from the combined workshop repository. Because the exercises use issues, branches, sessions, and pull requests, Lesson 0 guides you through creating your own repository from that template.'
+      '> [!NOTE]\n> This lab intentionally uses the separate [Tailspin Toys template repository](https://github.com/github-samples/tailspin-toys), not a folder from the combined workshop repository. Because the exercises use issues, branches, sessions, and pull requests, Lesson 0 guides you through creating your own repository from that template. If your enterprise policy prevents creating a template repository, clone the template for local-only exercises and skip issue, pull request, and Agent Merge lessons.'
   }
 );
 
@@ -383,11 +378,11 @@ importMarkdownDirectory(
       [/Add from MCP MCP/g, 'Add from MCP Registry'],
       [
         /> \[!NOTE\]\n> For the hands-on lab exercises that create or modify repository data via cloud agents \(Part 12\), you'll need to fork the lab repo into your own account\. This gives the cloud agent permissions to operate on your fork\./,
-        'Part 12 delegates work to a cloud agent and requires a fork where you have write access. If you cloned the source repository directly during [Step 0](../../../prepare/#step-0-fork-or-clone-the-workshop), create your fork before starting Part 12.'
+        'Part 9 creates GitHub issues and Part 12 delegates work to a cloud agent. Both need a repository where you have write access. Fork `workshop-tinyshop` before those parts. If enterprise policy prevents a fork, you can complete every local exercise but must skip those repository-backed actions.'
       ],
       [
         /the \*\*eshop\.png\*\* image found in the root of the cloned repository/,
-        '`labs/03-visual-studio/eshop.png` from your cloned workshop repository'
+        '`eshop.png` from the root of your cloned TinyShop repository'
       ],
       [
         /1\. \[(?: )?\] Navigate to \*\*Tools -> Options -> GitHub -> Copilot -> Source Control Integration\*\*\.\n1\. \[(?: )?\] Update the commit message customization setting to: `Summarize in a few sentences and then highlight the top 5 changes with emoji and short descriptions`/,
@@ -402,12 +397,18 @@ importMarkdownDirectory(
       ],
       [
         /## Clone Lab Repository[\s\S]*?The code is now opened in Visual Studio\. Feel free to take a look at it or skip to the next section to start the app\./,
-        `## Open the included lab solution
+        `## Clone and open the lab solution
 
-The TinyShop source is already included in the workshop repository you cloned during Step 0.
+Clone the dedicated TinyShop repository:
 
-1. [ ] In Visual Studio, select **File -> Open -> Project/Solution**.
-2. [ ] From your cloned workshop folder, open \`labs/03-visual-studio/src/TinyShop.sln\`.`
+\`\`\`powershell
+git clone https://github.com/jamesmontemagno/workshop-tinyshop.git
+cd workshop-tinyshop
+start src\\TinyShop.sln
+\`\`\`
+
+1. [ ] In Visual Studio, select **File -> Open -> Project/Solution** if the solution did not open automatically.
+2. [ ] Open \`src/TinyShop.sln\`.`
       ]
     ]
   }
@@ -425,20 +426,25 @@ importMarkdownDirectory(
       [/## 1\. Clone the repository/, '## 1. Open the SDK lab folder'],
       [
         /```bash\ngit clone https:\/\/github\.com\/jamesmontemagno\/copilot-sdk-workshop\.git\ncd copilot-sdk-workshop\ncode \.\n```/,
-        `From the workshop repository you cloned during [Step 0](../../../prepare/#step-0-fork-or-clone-the-workshop), open the included SDK lab:
+        `Clone the dedicated SDK workshop repository and open it in Visual Studio Code:
 
 \`\`\`bash
-cd labs/04-copilot-sdk
+git clone https://github.com/jamesmontemagno/workshop-accessibility-agent.git
+cd workshop-accessibility-agent
 code .
 \`\`\``
       ],
       [
         /If `code` is not on your path, use your editor's \*\*Open Folder\*\* command instead\./,
-        "If `code` is not on your path, use your editor's **Open Folder** command and select `labs/04-copilot-sdk` instead."
+        "If `code` is not on your path, use your editor's **Open Folder** command and select `workshop-accessibility-agent` instead."
       ],
       [
         /github\.com\/codemillmatt\/copilot-sdk-workshop/g,
-        'github.com/jamesmontemagno/copilot-sdk-workshop'
+        'github.com/jamesmontemagno/workshop-accessibility-agent'
+      ],
+      [
+        /github\.com\/jamesmontemagno\/copilot-sdk-workshop/g,
+        'github.com/jamesmontemagno/workshop-accessibility-agent'
       ],
       [
         /\{\{TARGET_APP_URL\}\}/g,
@@ -514,11 +520,6 @@ The guard fails clearly if Copilot finishes without an assistant message. Otherw
     ]
   }
 );
-copyTree(
-  join(sources['copilot-sdk'], 'docs', 'target-app'),
-  join(root, 'public', 'target-app')
-);
-
 for (const template of ['visual-studio', 'copilot-sdk']) {
   cpSync(
     join(root, 'scripts', 'templates', `${template}-index.md`),
@@ -631,101 +632,6 @@ Choose a model when prompted, then confirm the terminal prints a Copilot respons
 };
 
 configureSdkLessonModelSelection();
-
-for (const entry of ['.devcontainer', '.vscode', 'public', 'src']) {
-  const source = join(sources.cli, entry);
-  if (existsSync(source)) copyTree(source, join(labsRoot, '01-copilot-cli', entry));
-}
-for (const entry of [
-  '.gitignore',
-  'LICENSE',
-  'README.md',
-  'astro.config.mjs',
-  'package.json',
-  'package-lock.json',
-  'tsconfig.json'
-]) {
-  cpSync(join(sources.cli, entry), join(labsRoot, '01-copilot-cli', entry));
-}
-
-copyTree(join(sources['visual-studio'], 'src'), join(labsRoot, '03-visual-studio', 'src'));
-for (const entry of ['LICENSE', 'README.md', 'eshop.png']) {
-  cpSync(
-    join(sources['visual-studio'], entry),
-    join(labsRoot, '03-visual-studio', entry)
-  );
-}
-copyTree(
-  join(sources['visual-studio'], '.github'),
-  join(labsRoot, '03-visual-studio', '.github')
-);
-
-for (const entry of ['start', 'checkpoints', 'samples', 'src']) {
-  copyTree(
-    join(sources['copilot-sdk'], entry),
-    join(labsRoot, '04-copilot-sdk', entry)
-  );
-}
-for (const entry of ['Directory.Build.props', 'README.md']) {
-  cpSync(
-    join(sources['copilot-sdk'], entry),
-    join(labsRoot, '04-copilot-sdk', entry)
-  );
-}
-
-const configureSdkModelSelection = (projectDirectory) => {
-  const programPath = join(projectDirectory, 'Program.cs');
-  if (!existsSync(programPath)) return;
-
-  let program = readFileSync(programPath, 'utf8');
-  if (!program.includes('new CopilotClient()')) return;
-
-  const projectFile = readdirSync(projectDirectory).find((entry) => entry.endsWith('.csproj'));
-  if (!projectFile) {
-    throw new Error(`Could not determine the project namespace for ${projectDirectory}`);
-  }
-  const project = readFileSync(join(projectDirectory, projectFile), 'utf8');
-  const rootNamespace = project.match(/<RootNamespace>([^<]+)<\/RootNamespace>/)?.[1];
-  if (!rootNamespace) {
-    throw new Error(`Could not determine the root namespace for ${projectFile}`);
-  }
-
-  const helperNamespace = `${rootNamespace}.Helpers`;
-  if (!program.includes(`using ${helperNamespace};`)) {
-    program = program.replace(
-      'using GitHub.Copilot;',
-      `using GitHub.Copilot;\nusing ${helperNamespace};`
-    );
-  }
-  program = program.replace(
-    /(var ping = await client\.PingAsync\("workshop"\);\r?\n[\s\S]*?Console\.WriteLine\([^;]+?\);\r?\n)(?!\r?\nvar selectedModel)/,
-    '$1\nvar selectedModel = await ModelSelector.SelectAsync(client);\n'
-  );
-  program = program.replace(
-    /new SessionConfig\(\)/g,
-    'new SessionConfig\n{\n    Model = selectedModel\n}'
-  );
-  program = program.replace(
-    /new SessionConfig\r?\n\{\r?\n(?!\s*Model = selectedModel,?)/g,
-    'new SessionConfig\n{\n    Model = selectedModel,\n'
-  );
-  writeFileSync(programPath, program);
-
-  const helpersDirectory = join(projectDirectory, 'Helpers');
-  mkdirSync(helpersDirectory, { recursive: true });
-  writeFileSync(join(helpersDirectory, 'ModelSelector.cs'), modelSelectorSource(rootNamespace));
-};
-
-for (const directory of [
-  ...readdirSync(join(labsRoot, '04-copilot-sdk', 'checkpoints')).map((entry) =>
-    join(labsRoot, '04-copilot-sdk', 'checkpoints', entry)
-  ),
-  ...readdirSync(join(labsRoot, '04-copilot-sdk', 'samples')).map((entry) =>
-    join(labsRoot, '04-copilot-sdk', 'samples', entry)
-  )
-]) {
-  configureSdkModelSelection(directory);
-}
 
 if (temporaryRoot) {
   rmSync(temporaryRoot, { recursive: true, force: true });

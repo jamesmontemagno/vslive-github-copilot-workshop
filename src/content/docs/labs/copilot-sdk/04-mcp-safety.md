@@ -172,7 +172,7 @@ await ResponseStreamer.SendAndPrintAsync(
 ## Run it
 
 ```bash
-dotnet run --project workshop-app -- "https://jamesmontemagno.github.io/vslive-github-copilot-workshop/target-app/"
+dotnet run --project workshop-app -- "https://jamesmontemagno.github.io/workshop-accessibility-agent/target-app/"
 ```
 
 The first run may take longer while `npx` starts Playwright. Look for:
@@ -218,7 +218,7 @@ protect the process boundary.
 <summary>Complete Step 4 checkpoint</summary>
 
 The Step 4 checkpoint contains the complete project:
-[`checkpoints/04-mcp-safety`](https://github.com/jamesmontemagno/copilot-sdk-workshop/tree/main/checkpoints/04-mcp-safety).
+[`checkpoints/04-mcp-safety`](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/checkpoints/04-mcp-safety).
 
 ```csharp
 using GitHub.Copilot;

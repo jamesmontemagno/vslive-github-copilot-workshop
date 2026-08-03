@@ -43,7 +43,7 @@ Before we begin, let's install the .github + MCP extension for Visual Studio. Th
 1. [ ] When the browser shows the confirmation, click **Open** to return to Visual Studio.
 1. [ ] After setup you should see the **GitHub Copilot Walkthrough** tab and the Copilot button should be green.
 
-Part 12 delegates work to a cloud agent and requires a fork where you have write access. If you cloned the source repository directly during [Step 0](../../../prepare/#step-0-fork-or-clone-the-workshop), create your fork before starting Part 12.
+Part 9 creates GitHub issues and Part 12 delegates work to a cloud agent. Both need a repository where you have write access. Fork `workshop-tinyshop` before those parts. If enterprise policy prevents a fork, you can complete every local exercise but must skip those repository-backed actions.
 
 ## Turn on Copilot Settings
 
@@ -66,12 +66,18 @@ Part 12 delegates work to a cloud agent and requires a fork where you have write
 1. [ ] Head to **Tools -> Options -> GitHub -> Editor** and ensure the following settings are enabled:
    - **Enable AI generated description for auto-inserted documentation comments in support languages**
 
-## Open the included lab solution
+## Clone and open the lab solution
 
-The TinyShop source is already included in the workshop repository you cloned during Step 0.
+Clone the dedicated TinyShop repository:
 
-1. [ ] In Visual Studio, select **File -> Open -> Project/Solution**.
-2. [ ] From your cloned workshop folder, open `labs/03-visual-studio/src/TinyShop.sln`.
+```powershell
+git clone https://github.com/jamesmontemagno/workshop-tinyshop.git
+cd workshop-tinyshop
+start src\TinyShop.sln
+```
+
+1. [ ] In Visual Studio, select **File -> Open -> Project/Solution** if the solution did not open automatically.
+2. [ ] Open `src/TinyShop.sln`.
 
 ## Start the App
 
@@ -87,7 +93,7 @@ The TinyShop source is already included in the workshop repository you cloned du
 
 ## Summary and Next Steps
 
-You've now set up your environment and cloned the repository you'll use for the rest of the workshop. Let's start exploring GitHub Copilot!
+You've now set up your environment and cloned the repository you'll use for the rest of the workshop. The `completed` branch contains a reference implementation when you need to compare your progress. Let's start exploring GitHub Copilot!
 
 ---
 

@@ -53,7 +53,7 @@ dotnet run --project workshop-app
 Use the workshop target:
 
 ```text
-https://jamesmontemagno.github.io/vslive-github-copilot-workshop/target-app/
+https://jamesmontemagno.github.io/workshop-accessibility-agent/target-app/
 ```
 
 Watch for all five stages:
@@ -67,7 +67,7 @@ Watch for all five stages:
 The controlled target intentionally includes browser-observable issues: a missing text alternative,
 no `main` landmark, an illogical heading sequence, and a textbox without an accessible name.
 Compare the report with the
-[published target HTML](https://github.com/jamesmontemagno/copilot-sdk-workshop/blob/main/docs/target-app/index.html);
+[published target HTML](https://github.com/jamesmontemagno/workshop-accessibility-agent/blob/main/docs/target-app/index.html);
 do not accept a finding that is absent from both the snapshot and source.
 
 <details>
@@ -114,7 +114,7 @@ over model choice. Otherwise, the core workshop is complete.
 
 Complete references:
 
-- [Step 6 checkpoint](https://github.com/jamesmontemagno/copilot-sdk-workshop/tree/main/checkpoints/06-structured-report)
-- [Finished accessibility reporter](https://github.com/jamesmontemagno/copilot-sdk-workshop/tree/main/samples/accessibility-report)
+- [Step 6 checkpoint](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/checkpoints/06-structured-report)
+- [Finished accessibility reporter](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/completed/start/HelloCopilotSDK)
 - [GitHub Copilot SDK for .NET](https://github.com/github/copilot-sdk/tree/main/dotnet)
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp)

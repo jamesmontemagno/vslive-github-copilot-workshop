@@ -9,7 +9,12 @@ Work through a partially completed TinyShop application with a .NET backend and 
 
 ## Starter
 
-Open `labs/03-visual-studio/src/TinyShop.sln` in [Visual Studio 2026](https://visualstudio.microsoft.com/vs/).
+```powershell
+git clone https://github.com/jamesmontemagno/workshop-tinyshop.git
+start workshop-tinyshop\src\TinyShop.sln
+```
+
+Open `src/TinyShop.sln` in [Visual Studio 2026](https://visualstudio.microsoft.com/vs/). The starter is on `main`; use `git switch completed` to inspect the finished solution.
 
 ## Lessons
 

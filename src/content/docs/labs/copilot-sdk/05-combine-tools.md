@@ -90,7 +90,7 @@ dotnet run --project workshop-app
 Paste this URL when prompted:
 
 ```text
-https://jamesmontemagno.github.io/vslive-github-copilot-workshop/target-app/
+https://jamesmontemagno.github.io/workshop-accessibility-agent/target-app/
 ```
 
 You should see activity from both kinds of tool:
@@ -139,7 +139,7 @@ source-of-truth criterion and remediation.
 <summary>Complete Step 5 checkpoint</summary>
 
 A complete Step 5 project is available at
-[`checkpoints/05-combine-tools`](https://github.com/jamesmontemagno/copilot-sdk-workshop/tree/main/checkpoints/05-combine-tools).
+[`checkpoints/05-combine-tools`](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/checkpoints/05-combine-tools).
 
 ```csharp
 using GitHub.Copilot;

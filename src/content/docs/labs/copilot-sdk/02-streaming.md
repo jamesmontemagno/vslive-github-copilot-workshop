@@ -137,7 +137,7 @@ progressive output or intermediate events.
 <summary>Complete Step 2 checkpoint</summary>
 
 The completed Step 2 project is in
-[`checkpoints/02-streaming`](https://github.com/jamesmontemagno/copilot-sdk-workshop/tree/main/checkpoints/02-streaming).
+[`checkpoints/02-streaming`](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/checkpoints/02-streaming).
 
 ```csharp
 using GitHub.Copilot;

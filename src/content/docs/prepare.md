@@ -9,7 +9,7 @@ Complete this checklist before Friday. Labs 1, 2, and 4 work on Windows, macOS, 
 
 - [ ] A personal GitHub account (preferred)
 - [ ] GitHub Copilot Free or a paid Copilot plan
-- [ ] Permission to create repositories and pull requests in your account
+- [ ] Permission to create repositories and pull requests in your account, if you plan to use the repository-backed exercises
 - [ ] Git configured with your GitHub identity
 
 ## Required tools
@@ -37,47 +37,24 @@ copilot login
 
 Complete the browser authentication flow. If your organization restricts Copilot, use a personal GitHub account with Copilot access for the workshop.
 
-## Step 0: Fork or clone the workshop
+## Clone the project for each lab
 
-Do this once before starting the labs. **Forking is recommended** because it gives you a repository where you can push changes, create pull requests, and use cloud agents.
+Clone only the project for the lab you are starting. Use [Visual Studio Code](https://code.visualstudio.com/) for the CLI and SDK labs, and [Visual Studio](https://visualstudio.microsoft.com/vs/) for the Visual Studio lab:
 
-1. Open the [workshop repository](https://github.com/jamesmontemagno/vslive-github-copilot-workshop).
-2. Select **Fork**, then create the fork in your personal GitHub account.
-3. Clone your fork and enter the workshop folder:
-
-   ```bash
-   git clone https://github.com/YOUR-GITHUB-HANDLE/vslive-github-copilot-workshop.git
-   cd vslive-github-copilot-workshop
-   ```
-
-If you only want to work locally, clone the source repository directly instead:
-
-```bash
-git clone https://github.com/jamesmontemagno/vslive-github-copilot-workshop.git
-cd vslive-github-copilot-workshop
-```
-
-The included starters are under `labs/`:
-
-```text
-labs/
-├── 01-copilot-cli/
-├── 03-visual-studio/
-└── 04-copilot-sdk/
-```
-
-## Open the project for each lab
-
-Start each lab from the cloned workshop folder. Use [Visual Studio Code](https://code.visualstudio.com/) for the CLI and SDK labs, and [Visual Studio](https://visualstudio.microsoft.com/vs/) for the Visual Studio lab:
-
-| Lab | Open this project |
+| Lab | Clone and open |
 |---|---|
-| Copilot CLI | Open a terminal in `labs/01-copilot-cli` and run `copilot` |
-| Copilot app | Create a separate repository from the [Tailspin Toys template](https://github.com/github-samples/tailspin-toys), then open it in the Copilot app |
-| Visual Studio 2026 | Open `labs/03-visual-studio/src/TinyShop.sln` in [Visual Studio](https://visualstudio.microsoft.com/vs/) |
-| Copilot SDK | Open `labs/04-copilot-sdk` in your editor and terminal |
+| Copilot CLI | `git clone https://github.com/jamesmontemagno/workshop-mona-mayhem.git` then `cd workshop-mona-mayhem` and run `copilot` |
+| Copilot app | Create a repository from the [Tailspin Toys template](https://github.com/github-samples/tailspin-toys), then open it in the Copilot app |
+| Visual Studio 2026 | `git clone https://github.com/jamesmontemagno/workshop-tinyshop.git`, then open `workshop-tinyshop/src/TinyShop.sln` |
+| Copilot SDK | `git clone https://github.com/jamesmontemagno/workshop-accessibility-agent.git` then `cd workshop-accessibility-agent` and run `code .` |
 
-Tailspin Toys is intentionally separate because the Copilot app exercises use its repository-backed issues, branches, and pull requests. Its Lesson 0 walks you through creating that repository.
+Each standalone repository has its workshop starter on `main` and a `completed` branch for reference.
+
+## When to fork instead
+
+Direct cloning is enough for all local exercises. Fork the individual project only when a lesson needs you to push changes, create an issue or pull request, or delegate work to a cloud agent. If an enterprise-managed account prevents forking, remain on a direct clone and complete the local exercises; the repository-backed actions will be unavailable.
+
+Tailspin Toys intentionally uses its template flow because its Copilot app lessons depend on pre-seeded issues, branches, and pull requests.
 
 ## Quick preflight
 
@@ -85,8 +62,8 @@ Before arriving, confirm:
 
 1. `git`, `node`, `copilot`, and `dotnet` return versions without errors.
 2. You can authenticate with GitHub and Copilot.
-3. Visual Studio 2026 opens the solution at `labs/03-visual-studio/src/TinyShop.sln`.
-4. You cloned the workshop repository and can find its three included starter folders.
+3. Visual Studio 2026 opens `workshop-tinyshop/src/TinyShop.sln`.
+4. You can clone the standalone starter needed for your first lab.
 5. You can access the separate Tailspin Toys template repository.
 
 When everything is ready, [begin with the Copilot CLI lab](/labs/cli/).

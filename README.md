@@ -39,15 +39,9 @@ The workshop pages contain the current product and installation links for each t
 | Path | Purpose |
 | --- | --- |
 | `src/content/docs/` | The published workshop lessons and supporting pages. |
-| `labs/01-copilot-cli/` | Runnable GitHub Copilot CLI lab content. |
-| `labs/03-visual-studio/` | Visual Studio 2026 lab solution and source. |
-| `labs/04-copilot-sdk/` | Copilot SDK starters, checkpoints, samples, and target application. |
-| `public/target-app/` | The intentionally flawed accessibility target used by the SDK exercises. |
 | `scripts/` | Content validation and reproducible workshop-import tooling. |
 
-The Copilot app lab intentionally uses the separate
-[Tailspin Toys template](https://github.com/github-samples/tailspin-toys) rather than vendoring
-that application in this repository.
+The runnable projects live in their own public repositories: [Mona Mayhem](https://github.com/jamesmontemagno/workshop-mona-mayhem), [TinyShop](https://github.com/jamesmontemagno/workshop-tinyshop), and [Accessibility Agent](https://github.com/jamesmontemagno/workshop-accessibility-agent). The Copilot app lab continues to use the separate [Tailspin Toys template](https://github.com/github-samples/tailspin-toys).
 
 ## Workshop sources
 

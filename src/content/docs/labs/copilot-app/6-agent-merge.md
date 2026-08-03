@@ -28,6 +28,9 @@ Up to this point you've been the one clicking **Merge pull request** on github.c
 
 You've reviewed the code manually, run tests, and even allowed Copilot to validate the UI. Now it's time to merge the new code into the codebase! Let's allow agent merge to shepherd the PR through continuous integration (CI) and to merge.
 
+> [!IMPORTANT]
+> Agent Merge requires a writable repository, permission to create and merge pull requests, and any organization policies required for its CI workflow. If you cloned Tailspin Toys without creating your own template repository, you cannot run this lesson.
+
 1. Return to the session you had open from the previous module where you were adding filtering functionality.
 2. In the upper right-hand corner, select the dropdown next to **Create PR**.
 3. Select **Agent merge** to enable agent merge.

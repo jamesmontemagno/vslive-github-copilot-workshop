@@ -8,13 +8,15 @@ In this part you'll set up your development environment **and** teach Copilot ab
 
 ### Step 1: Open the CLI Lab
 
-From the workshop repository root, open a terminal in the included starter:
+Clone the Mona Mayhem starter and open it in Visual Studio Code:
 
 ```bash
-cd labs/01-copilot-cli
+git clone https://github.com/jamesmontemagno/workshop-mona-mayhem.git
+cd workshop-mona-mayhem
+code .
 ```
 
-Keep your work in this folder. If you forked the workshop repository during [Step 0](../../../prepare/#step-0-fork-or-clone-the-workshop), your changes can be committed and pushed back to that fork.
+Keep your work in this folder. A direct clone is sufficient for the local lab. Fork this repository only if you want to push your work or use the optional cloud delegation exercise.
 
 
 
@@ -43,7 +45,7 @@ Use the installation path that matches your machine:
 
 ### Step 3: Start the App and Authenticate the CLI
 
-1. In the terminal already open at `labs/01-copilot-cli`, install dependencies and start the app:
+1. In the terminal already open at `workshop-mona-mayhem`, install dependencies and start the app:
 
    ```bash
    npm install

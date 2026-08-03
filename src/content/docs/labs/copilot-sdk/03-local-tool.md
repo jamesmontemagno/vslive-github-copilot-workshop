@@ -151,7 +151,7 @@ in-process function is easier to test and does not cross a process boundary.
 <summary>Complete Step 3 checkpoint</summary>
 
 You can compare your version with the
-[`checkpoints/03-local-tool`](https://github.com/jamesmontemagno/copilot-sdk-workshop/tree/main/checkpoints/03-local-tool)
+[`checkpoints/03-local-tool`](https://github.com/jamesmontemagno/workshop-accessibility-agent/tree/main/checkpoints/03-local-tool)
 project.
 
 ```csharp
